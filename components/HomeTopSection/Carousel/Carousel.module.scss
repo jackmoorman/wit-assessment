@@ -1,0 +1,11 @@
+@import '../../../styles/globalVariables';
+
+.imgContainer {
+  background-color: $page-white-background;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

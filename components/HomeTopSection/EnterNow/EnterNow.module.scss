@@ -1,0 +1,17 @@
+@import '../../../styles/globalVariables';
+
+.button {
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: $bold-text-color;
+  font-size: 0.8125rem;
+  color: #fff;
+  transition: all 0.125s ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}

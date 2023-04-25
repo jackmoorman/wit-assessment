@@ -1,0 +1,82 @@
+$bold-text-color: #fd3560;
+
+.homeTopContainer {
+  // display: flex;
+  // justify-content: flex-start;
+  // align-items: center;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .homeTopLeft {
+    display: flex;
+    flex-direction: column;
+
+    .homeLogoSection {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .logoText {
+        margin-left: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        p {
+          margin: 0;
+          padding: 0;
+          font-weight: lighter;
+        }
+
+        :nth-child(2) {
+          font-weight: bold;
+          color: $bold-text-color;
+        }
+      }
+    }
+
+    .fanMoments {
+      margin-top: 14px;
+      margin-bottom: 32px;
+      font-size: 18px;
+
+      .fanMomentsHero {
+        font-size: 60px;
+        font-weight: 900;
+      }
+    }
+
+    .pepsiSection {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      gap: 1rem;
+
+      p {
+        margin: 0;
+
+        span {
+          font-weight: 900;
+          color: $bold-text-color;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .stepsSection {
+      display: flex;
+      font-size: 0.875rem;
+      gap: 44px;
+      position: relative;
+      margin: 40px 0;
+    }
+  }
+
+  .carouselSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
