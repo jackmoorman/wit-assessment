@@ -1,12 +1,15 @@
-$color: #fff;
+@import '../../styles/globalVariables';
 
 .header {
-  top: 42px;
   padding: 42px 50px;
-  // position: absolute;
-  // margin-left: -139px;
+
+  p {
+    margin: 0;
+    padding: 0;
+    letter-spacing: $spacing-big;
+  }
 }
 
 .date {
-  font-weight: bold;
+  font-weight: 900;
 }

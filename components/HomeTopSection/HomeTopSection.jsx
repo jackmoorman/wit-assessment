@@ -3,8 +3,7 @@ import bulldogLogo from '../../public/Ellipse6.png';
 import pepsiLogo from '../../public/Ellipse7.png';
 import Image from 'next/image';
 import styles from './HTS.module.scss';
-import TextBox from './TextBox/TextBox';
-import EnterNow from './EnterNow/EnterNow';
+import EnterNowButton from './EnterNow/EnterNowButton';
 import Carousel from './Carousel/Carousel';
 
 export default function HomeTopSection() {
@@ -17,14 +16,55 @@ export default function HomeTopSection() {
 
   return (
     <>
-      <div
+      <section className={`container ${styles.topContainer}`}>
+        <div className={styles.logoSection}>
+          <Image src={bulldogLogo} height={76} width={76} alt="bulldog-logo" />
+          <p className={styles.hashtag}>
+            OUR NEXT CONTEST: <span>#LOREMIPSUMDOLOR</span>
+          </p>
+        </div>
+
+        <h1 className={styles.fanMoments}>FAN MOMENTS</h1>
+        <p className={styles.fanMomentsText}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          pharetra congue libero in finibus. Integer nulla eros, tempus.
+        </p>
+
+        <p className={styles.pepsiSection}>
+          PRESENTED BY &nbsp; <span>PEPSI</span>
+          <Image
+            src={pepsiLogo}
+            height={50}
+            width={50}
+            alt="pepsi-logo"
+            style={{ marginLeft: '14px' }}
+          />
+        </p>
+
+        {steps.map((step, index) => (
+          <p
+            key={index}
+            style={{ gridArea: `textBox${index}` }}
+            className={styles.textBox}
+          >
+            {step}
+          </p>
+        ))}
+
+        <EnterNowButton />
+
+        <div className={styles.carouselContainer}>
+          <Carousel />
+        </div>
+      </section>
+      {/* <div
         style={{ border: '1px solid white' }}
         className={`container ${styles.homeTopContainer}`}
       >
         <section className={`row ${styles.homeTopLeft}`}>
-          <div className={styles.homeLogoSection}>
-            {/* 76px x 76px per the design */}
-            <Image
+          <div className={styles.homeLogoSection}> */}
+      {/* 76px x 76px per the design */}
+      {/* <Image
               src={bulldogLogo}
               width={76}
               height={76}
@@ -58,7 +98,7 @@ export default function HomeTopSection() {
         <section className={styles.carouselSection}>
           <Carousel />
         </section>
-      </div>
+      </div> */}
     </>
   );
 }

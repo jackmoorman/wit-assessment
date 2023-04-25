@@ -1,82 +1,168 @@
-$bold-text-color: #fd3560;
+@import '../../styles/globalVariables';
+// $bold-text-color: #fd3560;
 
-.homeTopContainer {
-  // display: flex;
-  // justify-content: flex-start;
-  // align-items: center;
-
+.topContainer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    'logoSection logoSection logoSection prize prize prize'
+    'fanMoments fanMoments fanMoments prize prize prize'
+    'fanMomentsText fanMomentsText fanMomentsText prize prize prize'
+    'pepsi pepsi pepsi prize prize prize'
+    'textBox0 textBox1 textBox2 prize prize prize'
+    'enterNow enterNow enterNow prize prize prize';
+  // align-items: start;
+  // grid-template-rows: 90px 90px 125px 50px;
+  // grid-template-rows: minmax(min-content, max-content);
 
-  .homeTopLeft {
+  .logoSection {
+    grid-area: logoSection;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
 
-    .homeLogoSection {
+    .hashtag {
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0;
+      letter-spacing: $spacing-small;
 
-      .logoText {
-        margin-left: 16px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-
-        p {
-          margin: 0;
-          padding: 0;
-          font-weight: lighter;
-        }
-
-        :nth-child(2) {
-          font-weight: bold;
-          color: $bold-text-color;
-        }
-      }
-    }
-
-    .fanMoments {
-      margin-top: 14px;
-      margin-bottom: 32px;
-      font-size: 18px;
-
-      .fanMomentsHero {
-        font-size: 60px;
+      :first-child {
+        color: $bold-text-color;
         font-weight: 900;
       }
     }
+  }
 
-    .pepsiSection {
-      display: flex;
-      align-items: center;
-      font-size: 18px;
-      gap: 1rem;
+  .fanMoments {
+    grid-area: fanMoments;
+    font-size: 60px;
+    height: 68px;
+    font-weight: 900;
+    margin: 14px 0;
+  }
 
-      p {
-        margin: 0;
+  .fanMomentsText {
+    grid-area: fanMomentsText;
+    font-size: 18px;
+  }
 
-        span {
-          font-weight: 900;
-          color: $bold-text-color;
-          font-size: 18px;
-        }
-      }
-    }
+  .pepsiSection {
+    grid-area: pepsi;
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 32px 0 40px 0;
 
-    .stepsSection {
-      display: flex;
-      font-size: 0.875rem;
-      gap: 44px;
-      position: relative;
-      margin: 40px 0;
+    :first-child {
+      color: $bold-text-color;
+      font-weight: 900;
     }
   }
 
-  .carouselSection {
+  .textBox {
+    margin-right: 44px;
+    border-top: 1px solid $bold-text-color;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .carouselContainer {
+    grid-area: prize;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
+
+@media (max-width: 1200px) {
+  // .topContainer {
+  //   display: flex;
+  // }
+}
+
+// .homeTopContainer {
+//   // display: flex;
+//   // justify-content: flex-start;
+//   // align-items: center;
+
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+
+//   .homeTopLeft {
+//     display: flex;
+//     flex-direction: column;
+
+//     .homeLogoSection {
+//       display: flex;
+//       justify-content: flex-start;
+//       align-items: center;
+
+//       .logoText {
+//         margin-left: 16px;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: flex-start;
+//         align-items: flex-start;
+
+//         p {
+//           margin: 0;
+//           padding: 0;
+//           font-weight: lighter;
+//         }
+
+//         :nth-child(2) {
+//           font-weight: bold;
+//           color: $bold-text-color;
+//         }
+//       }
+//     }
+
+//     .fanMoments {
+//       margin-top: 14px;
+//       margin-bottom: 32px;
+//       font-size: 18px;
+
+//       .fanMomentsHero {
+//         font-size: 60px;
+//         font-weight: 900;
+//       }
+//     }
+
+//     .pepsiSection {
+//       display: flex;
+//       align-items: center;
+//       font-size: 18px;
+//       gap: 1rem;
+
+//       p {
+//         margin: 0;
+
+//         span {
+//           font-weight: 900;
+//           color: $bold-text-color;
+//           font-size: 18px;
+//         }
+//       }
+//     }
+
+//     .stepsSection {
+//       display: flex;
+//       font-size: 0.875rem;
+//       gap: 44px;
+//       position: relative;
+//       margin: 40px 0;
+//     }
+//   }
+
+//   .carouselSection {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+// }

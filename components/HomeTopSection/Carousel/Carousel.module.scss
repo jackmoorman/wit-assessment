@@ -1,11 +1,62 @@
 @import '../../../styles/globalVariables';
 
-.imgContainer {
+.carousel {
   background-color: $page-white-background;
   width: 450px;
-  height: 450px;
+  height: 445px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
+  padding: 20px;
+
+  .img {
+    max-height: 300px;
+    max-width: 404px;
+  }
+
+  .imgText {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: $black-text;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -1px;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    :first-child {
+      color: $bold-text-color;
+      font-weight: 900;
+      font-size: 1rem;
+    }
+  }
+
+  .trackBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      background: none;
+      border: none;
+      width: 20%;
+      cursor: pointer;
+    }
+
+    .btnActive {
+      background-color: $bold-text-color;
+    }
+  }
 }
