@@ -1,0 +1,47 @@
+@import '../../styles/globalVariables';
+
+$bg-image-url: '../../public/Image.png';
+
+.submissionLayout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 0;
+  background-color: $backgroundColor;
+  background-repeat: no-repeat;
+  background-size: auto, auto, auto, cover;
+  background-blend-mode: color, multiply, normal, normal;
+  background-position: 0 0, 0 0, 0 0, center 20%;
+  background-image: linear-gradient(0deg, #ce022c, #ce022c),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    url($bg-image-url);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  min-width: 300px;
+  max-width: 500px;
+
+  label {
+    color: white;
+  }
+
+  input {
+    margin-bottom: 25px;
+    border: none;
+    padding: 10px;
+    font-size: 1.125rem;
+    color: $black-text;
+    border-radius: 5px;
+  }
+}
+
+.loading {
+  color: white;
+  font-weight: 400;
+}
