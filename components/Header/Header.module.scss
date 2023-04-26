@@ -13,3 +13,11 @@
 .date {
   font-weight: 900;
 }
+
+@media (max-width: $device-medium) {
+  .header {
+    font-size: $mobile-xs;
+    padding: 30px 33px;
+    letter-spacing: $spacing-medium;
+  }
+}

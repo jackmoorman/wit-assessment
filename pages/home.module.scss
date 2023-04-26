@@ -4,6 +4,7 @@ $bg-image-url: '../public/Image.png';
 .homeTopSection {
   width: 100%;
   min-height: 780px;
+  padding-bottom: 50px;
   background-color: $backgroundColor;
   background-repeat: no-repeat;
   background-size: auto, auto, auto, cover;

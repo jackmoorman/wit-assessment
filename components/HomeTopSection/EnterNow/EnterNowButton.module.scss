@@ -7,7 +7,7 @@
   border: none;
   border-radius: 20px;
   background-color: $bold-text-color;
-  font-size: 0.8125rem;
+  font-size: $desktop-xs;
   color: #fff;
   transition: all 0.3s ease-out;
   margin-top: 54px;
@@ -16,4 +16,10 @@
 .button:hover {
   cursor: pointer;
   transform: scale(1.05);
+}
+
+@media (max-width: $device-medium) {
+  .button {
+    font-size: $mobile-md;
+  }
 }

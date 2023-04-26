@@ -18,7 +18,11 @@ export default function HomeTopSection() {
     <>
       <section className={`container ${styles.topContainer}`}>
         <div className={styles.logoSection}>
-          <Image src={bulldogLogo} height={76} width={76} alt="bulldog-logo" />
+          <Image
+            className={styles.bulldogLogo}
+            src={bulldogLogo}
+            alt="bulldog-logo"
+          />
           <p className={styles.hashtag}>
             OUR NEXT CONTEST: <span>#LOREMIPSUMDOLOR</span>
           </p>
@@ -57,48 +61,6 @@ export default function HomeTopSection() {
           <Carousel />
         </div>
       </section>
-      {/* <div
-        style={{ border: '1px solid white' }}
-        className={`container ${styles.homeTopContainer}`}
-      >
-        <section className={`row ${styles.homeTopLeft}`}>
-          <div className={styles.homeLogoSection}> */}
-      {/* 76px x 76px per the design */}
-      {/* <Image
-              src={bulldogLogo}
-              width={76}
-              height={76}
-              alt="bulldog-logo"
-            />
-            <div className={styles.logoText}>
-              <p>OUR NEXT CONTEST:</p>
-              <p>#LOREMIPSUMDOLOR</p>
-            </div>
-          </div>
-          <div className={styles.fanMoments}>
-            <h1 className={styles.fanMomentsHero}>FAN MOMENTS</h1>
-            <p>
-              Lorem ipsum dolor sit amel, consectetur adipiscing elit. Nullam
-              phareta congue libero in finibus. Integer null eros, tempus.
-            </p>
-          </div>
-          <div className={styles.pepsiSection}>
-            <p>
-              PRESENTED BY <span>PEPSI</span>{' '}
-            </p>
-            <Image src={pepsiLogo} width={50} height={50} alt="pepsi-logo" />
-          </div>
-          <div className={styles.stepsSection}>
-            {steps.map((step, index) => (
-              <TextBox key={index} text={step} />
-            ))}
-          </div>
-          <EnterNow />
-        </section>
-        <section className={styles.carouselSection}>
-          <Carousel />
-        </section>
-      </div> */}
     </>
   );
 }

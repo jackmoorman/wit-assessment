@@ -1,7 +1,9 @@
 import styles from './home.module.scss';
 import Header from '../components/header/Header';
 import HomeTopSection from '../components/HomeTopSection/HomeTopSection';
-import Image from 'next/image';
+import Videos from '../components/Videos/Videos';
+import CTA from '../components/CTA/CTA';
+import Footer from '../components/Footer/Footer';
 
 export default function Home() {
   return (
@@ -11,6 +13,9 @@ export default function Home() {
           <Header />
           <HomeTopSection />
         </section>
+        <Videos />
+        <CTA />
+        <Footer />
       </div>
     </>
   );

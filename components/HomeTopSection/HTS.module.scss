@@ -10,9 +10,6 @@
     'pepsi pepsi pepsi prize prize prize'
     'textBox0 textBox1 textBox2 prize prize prize'
     'enterNow enterNow enterNow prize prize prize';
-  // align-items: start;
-  // grid-template-rows: 90px 90px 125px 50px;
-  // grid-template-rows: minmax(min-content, max-content);
 
   .logoSection {
     grid-area: logoSection;
@@ -20,6 +17,11 @@
     justify-content: flex-start;
     align-items: center;
     gap: 16px;
+
+    .bulldogLogo {
+      height: 76px;
+      width: 76px;
+    }
 
     .hashtag {
       display: flex;
@@ -38,20 +40,19 @@
 
   .fanMoments {
     grid-area: fanMoments;
-    font-size: 60px;
-    height: 68px;
+    font-size: $desktop-head;
     font-weight: 900;
     margin: 14px 0;
   }
 
   .fanMomentsText {
     grid-area: fanMomentsText;
-    font-size: 18px;
+    font-size: $desktop-lg;
   }
 
   .pepsiSection {
     grid-area: pepsi;
-    font-size: 18px;
+    font-size: $desktop-lg;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -80,89 +81,55 @@
   }
 }
 
-@media (max-width: 1200px) {
-  // .topContainer {
-  //   display: flex;
-  // }
+@media (max-width: $device-large) {
+  .topContainer {
+    grid-template-areas:
+      'logoSection logoSection logoSection'
+      'fanMoments fanMoments fanMoments'
+      'fanMomentsText fanMomentsText fanMomentsText'
+      'prize prize prize'
+      'pepsi pepsi pepsi'
+      'textBox0 textBox1 textBox2'
+      'enterNow enterNow enterNow';
+
+    .carouselContainer {
+      margin: 40px 0;
+    }
+  }
 }
 
-// .homeTopContainer {
-//   // display: flex;
-//   // justify-content: flex-start;
-//   // align-items: center;
+@media (max-width: $device-medium) {
+  .topContainer {
+    grid-template-areas:
+      'logoSection'
+      'fanMoments'
+      'fanMomentsText'
+      'prize'
+      'pepsi'
+      'textBox0'
+      'textBox1'
+      'textBox2'
+      'enterNow';
+    padding: 0 30px;
 
-//   display: grid;
-//   grid-template-columns: repeat(2, 1fr);
+    .logoSection {
+      margin-bottom: 30px;
 
-//   .homeTopLeft {
-//     display: flex;
-//     flex-direction: column;
+      .hashtag {
+        font-size: $mobile-xs;
+      }
+    }
 
-//     .homeLogoSection {
-//       display: flex;
-//       justify-content: flex-start;
-//       align-items: center;
+    .fanMoments {
+      font-size: $mobile-xxl;
+    }
 
-//       .logoText {
-//         margin-left: 16px;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: flex-start;
-//         align-items: flex-start;
+    .fanMomentsText {
+      font-size: $mobile-md;
+    }
 
-//         p {
-//           margin: 0;
-//           padding: 0;
-//           font-weight: lighter;
-//         }
-
-//         :nth-child(2) {
-//           font-weight: bold;
-//           color: $bold-text-color;
-//         }
-//       }
-//     }
-
-//     .fanMoments {
-//       margin-top: 14px;
-//       margin-bottom: 32px;
-//       font-size: 18px;
-
-//       .fanMomentsHero {
-//         font-size: 60px;
-//         font-weight: 900;
-//       }
-//     }
-
-//     .pepsiSection {
-//       display: flex;
-//       align-items: center;
-//       font-size: 18px;
-//       gap: 1rem;
-
-//       p {
-//         margin: 0;
-
-//         span {
-//           font-weight: 900;
-//           color: $bold-text-color;
-//           font-size: 18px;
-//         }
-//       }
-//     }
-
-//     .stepsSection {
-//       display: flex;
-//       font-size: 0.875rem;
-//       gap: 44px;
-//       position: relative;
-//       margin: 40px 0;
-//     }
-//   }
-
-//   .carouselSection {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//   }
-// }
+    .textBox {
+      font-size: $mobile-md;
+    }
+  }
+}
