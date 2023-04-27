@@ -1,0 +1,49 @@
+// CTA.module.scss
+@import '../../styles/globalVariables';
+
+.outerContainer {
+  min-height: 400px;
+  width: 100%;
+  position: relative;
+  background-color: $off-white-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .innerContainer {
+    color: $black-text;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 720px;
+
+    .headingText {
+      font-size: $desktop-xxl;
+      font-weight: 300;
+      margin: 21px;
+    }
+
+    .ctaText {
+      font-size: $desktop-lg;
+      text-align: center;
+      margin-bottom: -30px;
+    }
+  }
+}
+
+@media (max-width: $device-medium) {
+  .outerContainer {
+    .innerContainer {
+      .headingText {
+        font-size: $mobile-xl;
+      }
+
+      .ctaText {
+        font-size: $mobile-md;
+      }
+    }
+  }
+}

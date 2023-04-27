@@ -1,0 +1,61 @@
+@import '../../styles/globalVariables';
+
+.outerContainer {
+  width: 100%;
+  background-color: $page-white-background;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  .innerContainer {
+    min-height: 580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+
+    .headlineText {
+      margin: 60px 0;
+      color: $black-text;
+      font-weight: 300;
+      font-size: $desktop-xxl;
+      width: 100%;
+      text-align: center;
+
+      span {
+        color: $bold-text-color;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .videoContainer {
+      display: flex;
+      justify-content: flex-start;
+      gap: 62px;
+      width: 100%;
+      overflow: auto;
+      padding-left: 10px;
+    }
+
+    .image {
+      transition: all 0.3s ease-out;
+    }
+
+    .image:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (max-width: $device-medium) {
+  .outerContainer {
+    .innerContainer {
+      .headlineText {
+        font-size: $mobile-xl;
+      }
+    }
+  }
+}

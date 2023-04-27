@@ -1,0 +1,47 @@
+// success.module.scss
+@import '../../styles/globalVariables';
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: $backgroundColor;
+  color: $page-white-background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+
+  h1 {
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding: 0 25px;
+    text-align: center;
+  }
+
+  .link {
+    color: $page-white-background;
+    font-size: 1.25rem;
+    background-color: $bold-text-color;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 40px;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+  }
+
+  .link:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: $device-large) {
+  .container {
+    h1 {
+      font-size: 24px;
+    }
+    .link {
+      scale: 0.8;
+    }
+  }
+}

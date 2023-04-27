@@ -1,0 +1,24 @@
+// Header.module.scss
+@import '../../styles/globalVariables';
+
+.header {
+  padding: 42px 50px;
+
+  p {
+    margin: 0;
+    padding: 0;
+    letter-spacing: $spacing-big;
+  }
+}
+
+.date {
+  font-weight: 900;
+}
+
+@media (max-width: $device-medium) {
+  .header {
+    font-size: $mobile-xs;
+    padding: 30px 33px;
+    letter-spacing: $spacing-medium;
+  }
+}

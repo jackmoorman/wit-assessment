@@ -1,0 +1,135 @@
+// HTS.module.scss
+@import '../../styles/globalVariables';
+
+.topContainer {
+  display: grid;
+  grid-template-areas:
+    'logoSection logoSection logoSection prize prize prize'
+    'fanMoments fanMoments fanMoments prize prize prize'
+    'fanMomentsText fanMomentsText fanMomentsText prize prize prize'
+    'pepsi pepsi pepsi prize prize prize'
+    'textBox0 textBox1 textBox2 prize prize prize'
+    'enterNow enterNow enterNow prize prize prize';
+
+  .logoSection {
+    grid-area: logoSection;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+
+    .bulldogLogo {
+      height: 76px;
+      width: 76px;
+    }
+
+    .hashtag {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0;
+      letter-spacing: $spacing-small;
+
+      :first-child {
+        color: $bold-text-color;
+        font-weight: 900;
+      }
+    }
+  }
+
+  .fanMoments {
+    grid-area: fanMoments;
+    font-size: $desktop-head;
+    font-weight: 900;
+    margin: 14px 0;
+  }
+
+  .fanMomentsText {
+    grid-area: fanMomentsText;
+    font-size: $desktop-lg;
+  }
+
+  .pepsiSection {
+    grid-area: pepsi;
+    font-size: $desktop-lg;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 32px 0 40px 0;
+
+    :first-child {
+      color: $bold-text-color;
+      font-weight: 900;
+    }
+  }
+
+  .textBox {
+    margin-right: 44px;
+    border-top: 1px solid $bold-text-color;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .carouselContainer {
+    grid-area: prize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: $device-large) {
+  .topContainer {
+    grid-template-areas:
+      'logoSection logoSection logoSection'
+      'fanMoments fanMoments fanMoments'
+      'fanMomentsText fanMomentsText fanMomentsText'
+      'prize prize prize'
+      'pepsi pepsi pepsi'
+      'textBox0 textBox1 textBox2'
+      'enterNow enterNow enterNow';
+
+    .carouselContainer {
+      margin: 40px 0;
+    }
+  }
+}
+
+@media (max-width: $device-medium) {
+  .topContainer {
+    grid-template-areas:
+      'logoSection'
+      'fanMoments'
+      'fanMomentsText'
+      'prize'
+      'pepsi'
+      'textBox0'
+      'textBox1'
+      'textBox2'
+      'enterNow';
+    padding: 0 30px;
+
+    .logoSection {
+      margin-bottom: 30px;
+
+      .hashtag {
+        font-size: $mobile-xs;
+      }
+    }
+
+    .fanMoments {
+      font-size: $mobile-xxl;
+    }
+
+    .fanMomentsText {
+      font-size: $mobile-md;
+    }
+
+    .textBox {
+      font-size: $mobile-md;
+    }
+  }
+}
