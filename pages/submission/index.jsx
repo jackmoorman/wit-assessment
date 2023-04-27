@@ -2,6 +2,7 @@ import React from 'react';
 import SubmissionLayout from './layout';
 import styles from './submission.module.scss';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function index() {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,40 +13,48 @@ export default function index() {
   const [email, setEmail] = useState('John@');
   const [file, setFile] = useState(null);
 
+  const router = useRouter();
+
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (!firstName || !lastName || !email)
-      return alert('Please fill out all fields');
+    if (!firstName || !lastName || !email || !file)
+      return alert('Please fill out all fields and select an image to upload');
 
     if (!email.includes('@')) return alert('Please enter a valid email');
 
     setIsDisabled(true);
     setIsLoading(true);
 
-    const fileData = new FormData();
-    fileData.append('file', file);
+    const imageForm = new FormData();
+    imageForm.append('image', file);
 
-    // const userData = {
-    //   firstName,
-    //   lastName,
-    //   email,
-    // };
-
-    const submission = await fetch('/api/submission', {
+    const upload = await fetch('/api/image', {
       method: 'POST',
-      header: { 'Content-Type': 'application/json' },
-      body: fileData,
-      // body: {
-      //   userData: JSON.stringify(userData),
-      //   file: fileData,
-      // },
+      body: imageForm,
     });
-    // console.log('EMAIL: ', email);
-    // console.log('FIRST NAME: ', firstName);
-    // console.log('LAST NAME: ', lastName);
-    // console.log('FILE: ', file);
-    // console.log('FILE: ', e.target.file.files[0]);
+
+    if (upload.status !== 200) {
+      alert('There was an error during your submission. Please try again.');
+      setIsDisabled(false);
+      setIsLoading(false);
+      return;
+    }
+
+    const res = await upload.json();
+    console.log(res);
+    const { imageId } = res;
+
+    const addUser = await fetch('/api/submission', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: {
+        firstName,
+        lastName,
+        email,
+        imageId,
+      },
+    });
   }
 
   return (
