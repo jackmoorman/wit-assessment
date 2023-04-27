@@ -12,6 +12,7 @@ Instructions for running locally:
    - NOTE: A Docker volume was not created for this project, so every time the container is killed, all data will be lost in the container. As long as the container is running, all data should persist.
 4. In a separate terminal window, run `npx prisma migrate dev --name dbinit`
    - NOTE: I used Prisma as the ORM for the MySQL database. In order to format your database tables, you have to run a migration to create the tables in the MySQL database container.
+   - The `.sql` migration files can be viewed in the `/prisma/migrations/[migration-id_name]/migration.sql` files.
 5. Now, run `npx prisma generate`
    - This generates the prisma client which gives access to the database queries based on the schema defined `/prisma/prisma.schema`.
 6. Finally, run `npm run dev` to start the application on `http://localhost:3000` in the browser.
