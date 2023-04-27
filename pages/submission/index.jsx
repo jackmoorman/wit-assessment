@@ -48,13 +48,16 @@ export default function index() {
     const addUser = await fetch('/api/submission', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: {
+      body: JSON.stringify({
         firstName,
         lastName,
         email,
         imageId,
-      },
+      }),
     });
+
+    const resUser = await addUser.json();
+    console.log(resUser);
   }
 
   return (
