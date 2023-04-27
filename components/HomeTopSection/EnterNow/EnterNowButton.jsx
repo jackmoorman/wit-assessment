@@ -1,3 +1,4 @@
+// EnterNowButton.jsx
 import React from 'react';
 import styles from './EnterNowButton.module.scss';
 import Link from 'next/link';

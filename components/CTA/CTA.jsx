@@ -1,3 +1,4 @@
+// CTA.jsx
 import React from 'react';
 import styles from './CTA.module.scss';
 import EnterNowButton from '../HomeTopSection/EnterNow/EnterNowButton';

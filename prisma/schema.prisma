@@ -1,6 +1,9 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// This is the MySQL database schema.
+// Each 'model' represents a table in the database, with the column names, types of data, and what each represents.
+
 generator client {
   provider = "prisma-client-js"
 }

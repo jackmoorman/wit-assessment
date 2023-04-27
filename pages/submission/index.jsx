@@ -5,14 +5,17 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 
 export default function index() {
+  // Loading states
   const [isLoading, setIsLoading] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
 
+  // Form states
   const [firstName, setFirstName] = useState('John');
   const [lastName, setLastName] = useState('Doe');
   const [email, setEmail] = useState('John@');
   const [file, setFile] = useState(null);
 
+  // Next Router to push to success page if successful submit.
   const router = useRouter();
 
   async function handleSubmit(e) {
@@ -21,19 +24,24 @@ export default function index() {
     if (!firstName || !lastName || !email || !file)
       return alert('Please fill out all fields and select an image to upload');
 
+    // There are WAY more checks needed to make sure an email is valid. This is just very basic.
     if (!email.includes('@')) return alert('Please enter a valid email');
 
+    // Enable loading state and disable the button to prevent multiple submissions.
     setIsDisabled(true);
     setIsLoading(true);
 
+    // Create a new form data object and append the image to it.
     const imageForm = new FormData();
     imageForm.append('image', file);
 
+    // 'upload' the image --> save it to the /public/uploads directory.
     const upload = await fetch('/api/image', {
       method: 'POST',
       body: imageForm,
     });
 
+    // if status is NOT okay, throw an error.
     if (upload.status !== 200) {
       alert('There was an error during your submission. Please try again.');
       setIsDisabled(false);
@@ -41,10 +49,11 @@ export default function index() {
       return;
     }
 
+    // parse response and get the imageId to be used as its path.
     const res = await upload.json();
-    console.log(res);
     const { imageId } = res;
 
+    // add the user to the database.
     const addUser = await fetch('/api/submission', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -56,8 +65,24 @@ export default function index() {
       }),
     });
 
+    // if status is NOT okay, throw an error.
+    if (addUser.status !== 200) {
+      alert('There was an error during your submission. Please try again.');
+      // allow user to re-input if this type of error occurs.
+      setIsDisabled(false);
+      setIsLoading(false);
+      return;
+    }
+
     const resUser = await addUser.json();
-    console.log(resUser);
+
+    if (!resUser.success) {
+      // if error on the server side, alert the user.
+      return alert(success.error);
+    }
+
+    // push to success page if successful.
+    router.push('/success');
   }
 
   return (
