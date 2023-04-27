@@ -1,3 +1,4 @@
+import RootLayout from './layout';
 import styles from './home.module.scss';
 import Header from '../components/header/Header';
 import HomeTopSection from '../components/HomeTopSection/HomeTopSection';
@@ -8,15 +9,17 @@ import Footer from '../components/Footer/Footer';
 export default function Home() {
   return (
     <>
-      <div className="app">
-        <section className={styles.homeTopSection}>
-          <Header />
-          <HomeTopSection />
-        </section>
-        <Videos />
-        <CTA />
-        <Footer />
-      </div>
+      <RootLayout>
+        <div className="app">
+          <section className={styles.homeTopSection}>
+            <Header />
+            <HomeTopSection />
+          </section>
+          <Videos />
+          <CTA />
+          <Footer />
+        </div>
+      </RootLayout>
     </>
   );
 }

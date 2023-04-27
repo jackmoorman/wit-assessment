@@ -1,3 +1,4 @@
+// HomeTopSection.jsx
 import React from 'react';
 import bulldogLogo from '../../public/Ellipse6.png';
 import pepsiLogo from '../../public/Ellipse7.png';
